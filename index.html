@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>Password Generator | JavaScript Project</title>
+    <style>
+        body {
+            background: linear-gradient(270deg, #ffa585, #45c5d8);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-8 w-96">
+        <h1 class="text-2xl font-bold text-center mb-6">Password Generator</h1>
+
+        <div class="relative mb-4">
+            <input type="text" class="passBox w-full border border-gray-300 rounded-md p-2 text-lg" id="passBox" disabled />
+            <span class="material-icons absolute top-2 right-2 cursor-pointer" id="copyIcon">content_copy</span>
+        </div>
+
+        <input type="range" min="1" max="30" value="8" id="inputSlider" class="w-full mb-4" />
+
+        <div class="flex justify-between mb-2">
+            <p>Password Length</p>
+            <span id="sliderValue">8</span>
+        </div>
+
+        <div class="mb-2">
+            <label class="inline-flex items-center">
+                <input type="checkbox" id="lowercase" checked class="mr-2" />
+                Include Lowercase Letters (a-z)
+            </label>
+        </div>
+
+        <div class="mb-2">
+            <label class="inline-flex items-center">
+                <input type="checkbox" id="uppercase" checked class="mr-2" />
+                Include Uppercase Letters (A-Z)
+            </label>
+        </div>
+
+        <div class="mb-2">
+            <label class="inline-flex items-center">
+                <input type="checkbox" id="numbers" checked class="mr-2" />
+                Include Numbers (0-9)
+            </label>
+        </div>
+
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input type="checkbox" id="symbols" checked class="mr-2" />
+                Include Symbols (@-*)
+            </label>
+        </div>
+
+        <button type="button" class="bg-blue-500 text-white font-semibold py-2 rounded-md w-full hover:bg-blue-600" id="genBtn">
+            Generate Password
+        </button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
